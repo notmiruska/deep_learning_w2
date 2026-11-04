@@ -17,8 +17,16 @@ from sklearn import datasets
 
 # Copy and paste the code for that function here:
 # -----------------------------------------------
-def my_mlp:
-    pass  # replace with implementation
+def my_mlp(w, X, sigma=np.tanh):
+    W1 = w[0:(6*4)].reshape(4, 6)
+    W2 = w[(6*4):(6*4+7*4)].reshape(7, 4)
+    W3 = w[(6*4+7*4):(7+6*4+7*4)].reshape(1, 7)
+
+    a1 = sigma(W1.dot(X))
+    a2 = sigma(W2.dot(a1))
+    f = sigma(W3.dot(a2))
+
+    return f
 
 # -----------------------------------------------
 
@@ -32,7 +40,7 @@ def my_mlp:
 
 # Copy and paste the code for that function here:
 # -----------------------------------------------
-def MSE_func:
+def MSE_func():
     pass  # replace with implementation
 
 # -----------------------------------------------
@@ -49,7 +57,7 @@ def MSE_func:
 
 # Copy and paste the code for that function here:
 # -----------------------------------------------
-def dR:
+def dR():
     pass  # replace with implementation
 
 # -----------------------------------------------
