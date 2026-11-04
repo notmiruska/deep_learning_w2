@@ -61,7 +61,9 @@ def MSE_func(w, X, y):
 
 # Copy and paste the code for that function here:
 # -----------------------------------------------
-def dR():
-    pass  # replace with implementation
+def dR(beta, x, y):
+    dbeta_0 = 2/len(x) * np.sum(beta[0] + beta[1] * x - y)
+    dbeta_1 = 2/len(x) * np.sum((beta[0] + beta[1] * x - y) * x)
+    return np.array([dbeta_0, dbeta_1])
 
 # -----------------------------------------------
